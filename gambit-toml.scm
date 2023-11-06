@@ -7,7 +7,7 @@
 ;; TODO: build toml parser
 
 
-(define-library (https://github.com/AOrps/gambit-toml)
+(define-library (gambit-toml)
 
   (export func1 func2)
 
