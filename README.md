@@ -4,7 +4,7 @@
 ## :mag: Manual
 
 ```txt
-
+TODO: fill in with functions and stuff
 ```
 
 ## :alembic: Usage
