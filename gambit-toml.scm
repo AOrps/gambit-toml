@@ -20,7 +20,8 @@
   
   (export func1
           func2
-          read-toml-file)
+          read-toml-file
+          gi)
 
   (begin
 
@@ -29,7 +30,9 @@
 
     (define (valid-toml-name f)
       ;; TODO: check the the file ends with .toml extension
-      (display "filler")
+      (display
+        (list->string (reverse (string->list f)))
+        )
       )
     
     (define (read-toml-file f)
@@ -37,6 +40,8 @@
           ;; if the file exists
           (begin 
             (display "exists")
+            (newline)
+            (valid-toml-name f)
             )
 
           ;; if files doesn't exist
@@ -45,7 +50,11 @@
             )
        )
       
-     )
+      )
+
+    (define (gi)
+      (display (string-append "E " "Pluribus " " Unum"))
+      (newline))
 
 
 ))
