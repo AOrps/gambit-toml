@@ -7,10 +7,12 @@
 ;; TODO: build toml parser
 
 ;; steps:
-;; - read file
-;; - check file ends with .toml
+;; - [ ] read file
+;; - [x] check file ends with .toml
 ;; - follow spec: https://toml.io/en/v1.0.0#spec using recursive descent parser
 
+
+;; TODO: write docstrings similar to Python PEP 257
 
 (define-library (gambit-toml)
 
@@ -22,33 +24,35 @@
           func2
           read-toml-file
           gi)
-          ;; first-n)
 
   (begin
-
-    ;; (define (first-n lst n)
-    ;;   (letrec ((countdown (lambda n)
-    ;;                       (begin
-    ;;                         (display n)
-    ;;                         (newline)
-    ;;                         (countdown (+ i 1)))
-    ;;   ))))
     
     (define (func1 val) (* val 2))
     (define (func2 x y z) (+ x y z))
 
+
     (define (valid-toml-name f)
-      ;; TODO: check the the file ends with .toml extension
-      (display
-        (substring (list->string (reverse (string->list f))) 0 5)
-        )
-      )
+
+      ;; valid-toml-name -> checks that the file ends in .toml
+      ;; 
+      ;; Parameters:
+      ;; -f -> filename (string)
+      ;;
+      ;; Return: 
+      ;; ->  t|f (bool) 
+
+      (if (string=?
+       (substring (list->string (reverse (string->list f))) 0 5)
+       (list->string (reverse (string->list ".toml"))))
+          (display "valid")
+          (display "no bro"))
+    )
     
     (define (read-toml-file f)
       (if (file-exists? f)
           ;; if the file exists
           (begin 
-            (display "exists")
+            ;; (display "exists")
             (newline)
             (valid-toml-name f)
             )
@@ -59,7 +63,7 @@
             )
        )
       
-      )
+    )
 
     (define (gi)
       (display (string-append "E " "Pluribus " " Unum"))

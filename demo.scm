@@ -4,13 +4,13 @@
 (println "fx1(8): " (gambit-toml#func1 8))
 (print "read-toml-file(f): ")
 (gambit-toml#read-toml-file "example.toml")
+(gambit-toml#read-toml-file "./testing/yaml.tml")
 (newline)
 
 (print "read-toml-file(f): ")
 (gambit-toml#read-toml-file "xample.toml")
 (newline)
-(gambit-toml#gi)
+;; (gambit-toml#gi)
 
-(gambit-toml#first-n 5)
-
+;; (gambit-toml#first-n 5)
 
