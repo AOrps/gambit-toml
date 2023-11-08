@@ -1,3 +1,4 @@
+# Files
 *~
 
 *.ss~
@@ -7,3 +8,7 @@
 *.scm~
 *.scm#*
 .#*.scm
+
+
+# Dirs
+testing/
