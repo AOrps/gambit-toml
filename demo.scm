@@ -10,3 +10,7 @@
 (gambit-toml#read-toml-file "xample.toml")
 (newline)
 (gambit-toml#gi)
+
+(gambit-toml#first-n 5)
+
+

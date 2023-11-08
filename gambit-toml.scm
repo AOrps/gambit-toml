@@ -22,16 +22,25 @@
           func2
           read-toml-file
           gi)
+          ;; first-n)
 
   (begin
 
+    ;; (define (first-n lst n)
+    ;;   (letrec ((countdown (lambda n)
+    ;;                       (begin
+    ;;                         (display n)
+    ;;                         (newline)
+    ;;                         (countdown (+ i 1)))
+    ;;   ))))
+    
     (define (func1 val) (* val 2))
     (define (func2 x y z) (+ x y z))
 
     (define (valid-toml-name f)
       ;; TODO: check the the file ends with .toml extension
       (display
-        (list->string (reverse (string->list f)))
+        (substring (list->string (reverse (string->list f))) 0 5)
         )
       )
     
